@@ -126,6 +126,7 @@ h2 { font-size: 1.25rem; font-weight: 700; }
                    background: var(--brand-light); color: #fff; font-size: 15px; font-weight: 800; }
 .footer-p4e-text { color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.4; }
 .footer-p4e-text strong { display: block; }
+.site-footer .footer-credit { color: rgba(255,255,255,.5); font-size: 12px; }
 
 @media (max-width: 860px) {
   .has-hero .hero-grid { grid-template-columns: 1fr; gap: 28px; }
