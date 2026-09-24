@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <meta name="theme-color" content="#144d3a" />
+    {%- assign share_title = page.headline | default: site.title %}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ share_title }}" />
+    <meta property="og:description" content="{{ page.description | default: site.description }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:image" content="{{ '/assets/img/og-image.jpg' | absolute_url }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{ share_title }}, beside a photo of a SamTrans bus in downtown San Mateo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/p4e.css' | relative_url }}" />
+  </head>
+  <body>
+    <a class="skip-link" href="#projects">Skip to the projects</a>
+    <header class="p4e-header">
+      <div class="p4e-header-inner">
+        <a href="https://www.peninsulaforeveryone.org" target="_blank" rel="noopener">
+          <span class="p4e-logo-mark" aria-hidden="true">P</span>
+          <span>Peninsula for Everyone</span>
+        </a>
+        <span class="p4e-divider" aria-hidden="true">·</span>
+        <span class="p4e-resource-label">Data resources</span>
+      </div>
+    </header>
+
+    <header class="site-header{% if page.hero_image %} has-hero{% endif %}">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="kicker">{{ page.kicker }}</p>
+          <h1>{{ page.headline | default: site.title }}</h1>
+          <div class="lede">{{ content }}</div>
+          <p class="hero-actions">
+            <a class="btn btn-primary" href="#projects">See the tools</a>
+            <a class="btn btn-secondary" href="https://www.peninsulaforeveryone.org" target="_blank" rel="noopener">Get involved →</a>
+          </p>
+        </div>
+        {% if page.hero_image %}
+        <figure class="hero-photo">
+          <img src="{{ page.hero_image | append: '-1600.jpg' | relative_url }}"
+               srcset="{{ page.hero_image | append: '-900.jpg' | relative_url }} 900w, {{ page.hero_image | append: '-1600.jpg' | relative_url }} 1600w"
+               sizes="(min-width: 860px) 480px, 100vw"
+               width="1600" height="1067" alt="{{ page.hero_alt }}" fetchpriority="high" />
+        </figure>
+        {% endif %}
+      </div>
+    </header>
+
+    <main class="wrap projects" id="projects" aria-labelledby="projects-h" tabindex="-1">
+      <span class="section-label">Projects</span>
+      <h2 id="projects-h">Open-source data tools</h2>
+      <div class="project-grid">
+        {% for project in site.data.projects %}
+        <article class="project-card">
+          <a class="project-card-shot" href="{{ project.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ project.image | relative_url }}" width="1200" height="750" alt="" loading="lazy" />
+          </a>
+          <div class="project-card-body">
+            <h3 class="project-card-title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+            <p class="project-card-sub">{{ project.description }}</p>
+            <p class="project-card-links">
+              <a class="project-card-open" href="{{ project.url }}">Open the tool →</a>
+              <a href="{{ project.repo }}" target="_blank" rel="noopener">Source</a>
+            </p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-p4e">
+          <span class="footer-p4e-mark" aria-hidden="true">P</span>
+          <span class="footer-p4e-text">
+            <strong>Peninsula for Everyone</strong>
+            A grassroots network saying yes to homes, transit, and equitable neighborhoods.
+          </span>
+        </div>
+        <hr class="footer-divider" />
+        <p>
+          Everything here is open source under the
+          <a href="https://github.com/PeninsulaForEveryone" target="_blank" rel="noopener">PeninsulaForEveryone GitHub organization</a>.
+          Issues and pull requests welcome.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

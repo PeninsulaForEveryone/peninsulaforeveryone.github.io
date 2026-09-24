@@ -1,0 +1,25 @@
+# Each entry renders as a card on the home page, newest first.
+# image: a 1200×750 (16:10) screenshot in assets/img/projects/.
+- title: What Your Location Costs
+  url: https://peninsulaforeveryone.github.io/housing-transportation-costs/
+  repo: https://github.com/PeninsulaForEveryone/housing-transportation-costs
+  image: /assets/img/projects/housing-transportation-costs.jpg
+  description: Compare what one household spends on housing and transportation in any two neighborhoods, including hidden parking costs.
+
+- title: Peninsula Permit Tracker
+  url: https://peninsulaforeveryone.github.io/permit-timeline-tracker/
+  repo: https://github.com/PeninsulaForEveryone/permit-timeline-tracker
+  image: /assets/img/projects/permit-timeline-tracker.jpg
+  description: How long does your city take to approve housing? Every Peninsula city, ranked by friction score.
+
+- title: Enrollment vs. Housing
+  url: https://peninsulaforeveryone.github.io/peninsula-enrollment-decline/
+  repo: https://github.com/PeninsulaForEveryone/peninsula-enrollment-decline
+  image: /assets/img/projects/peninsula-enrollment-decline.jpg
+  description: New housing isn't overwhelming schools. Enrollment is falling everywhere, even where cities build the most.
+
+- title: SB 79 Analysis
+  url: https://peninsulaforeveryone.github.io/sb79-analysis/public/
+  repo: https://github.com/PeninsulaForEveryone/sb79-analysis
+  image: /assets/img/projects/sb79-analysis.jpg
+  description: Which parcels SB 79 would upzone near transit, and how many homes they could hold. Mapped for San Mateo.
